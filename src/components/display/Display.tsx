@@ -2,7 +2,6 @@ import "src/components/display/Display.scss";
 
 const Display = ({ value: { calc }, history }: any): JSX.Element => {
   const historyData = JSON.parse(history);
-  console.log(historyData);
   return (
     <div className="calculator-display">
       <div className="calculator-results">
