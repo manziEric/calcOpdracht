@@ -5,7 +5,6 @@ const commaClickHandler = (
   calc: object | any,
   setCalc: Dispatch<SetStateAction<{ sign: string; num: number; res: number }>>
 ) => {
-  console.log(typeof calc);
   setCalc({
     ...calc,
     num: !calc.num.toString().includes(".") ? calc.num + btn : calc.num,

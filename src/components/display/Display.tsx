@@ -6,7 +6,7 @@ const Display = ({ value: { calc }, history }: any): JSX.Element => {
   return (
     <div className="calculator-display">
       <div className="calculator-results">
-        {calc.num ? calc.num : calc.res + calc.num + ` ${calc.sign}`}
+        {calc.num ? calc.num : calc.res + ` ${calc.sign}`}
       </div>
       {historyData == null ? (
         ""
