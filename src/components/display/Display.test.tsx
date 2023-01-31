@@ -1,5 +1,5 @@
-import { render, screen } from "@testing-library/react";
 import { SetStateAction } from "react";
+import { render, screen } from "@testing-library/react";
 import Display from "src/components/display/Display";
 
 describe("Display", () => {

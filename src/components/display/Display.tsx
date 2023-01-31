@@ -3,7 +3,7 @@ import "src/components/display/Display.scss";
 
 interface ComponentsProps {
   value: StateProp;
-  history: any;
+  history: string | null | any;
 }
 
 const Display = ({

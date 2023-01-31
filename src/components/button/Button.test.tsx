@@ -2,7 +2,7 @@ import { render, fireEvent, screen } from "@testing-library/react";
 import Button from "src/components/button/Button";
 
 describe("Button", () => {
-  it("should render the correct value", () => {
+  it("should render the button with click action", () => {
     render(<Button value="click me" className="button" onClick={() => {}} />);
 
     expect(screen.getByText("click me")).toBeInTheDocument();

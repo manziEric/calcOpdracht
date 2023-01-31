@@ -1,12 +1,14 @@
 import { Dispatch, SetStateAction } from "react";
 import { Calc } from "src/types/stateType";
-import commaClickHandler from "src/components/calculator/utils/commaClickHandler";
-import equalsClickHandler from "src/components/calculator/utils/equalsClickHandler";
-import invertClickHandler from "src/components/calculator/utils/invertClickHandler";
-import numClickHandler from "src/components/calculator/utils/numClickHandler";
-import percentClickHandler from "src/components/calculator/utils/percentClickHandler";
-import resetClickHandler from "src/components/calculator/utils/resetClickHandler";
-import signClickHandler from "src/components/calculator/utils/signClickHandler";
+import {
+  commaClickHandler,
+  equalsClickHandler,
+  invertClickHandler,
+  numClickHandler,
+  percentClickHandler,
+  resetClickHandler,
+  signClickHandler,
+} from "src/components/calculator/utils";
 
 const buttonsClickHandler = (
   calcValue: {
@@ -26,7 +28,7 @@ const buttonsClickHandler = (
     ? percentClickHandler(calc, setCalc)
     : btn === "="
     ? equalsClickHandler(calc, setCalc)
-    : btn === "/" || btn === "X" || btn === "-" || btn === "+" || btn === ")"
+    : btn === "/" || btn === "X" || btn === "-" || btn === "+"
     ? signClickHandler(btn, calc, setCalc)
     : btn === "."
     ? commaClickHandler(btn, calc, setCalc)
