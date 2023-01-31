@@ -1,4 +1,10 @@
-const numClickHandler = (btn: any, calc: any, setCalc: any) => {
+import { Dispatch, SetStateAction } from "react";
+
+const numClickHandler = (
+  btn: number | string,
+  calc: any,
+  setCalc: Dispatch<SetStateAction<{ sign: string; num: number; res: number }>>
+) => {
   setCalc({
     ...calc,
     num:

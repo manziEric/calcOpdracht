@@ -1,4 +1,9 @@
-const equalsClickHandler = (calc: any, setCalc: any) => {
+import { Dispatch, SetStateAction } from "react";
+
+const equalsClickHandler = (
+  calc: any,
+  setCalc: Dispatch<SetStateAction<{ sign: string; num: number; res: number }>>
+) => {
   if (calc.sign && calc.num) {
     const math = (a: number, b: number, sign: string) =>
       sign === "+"

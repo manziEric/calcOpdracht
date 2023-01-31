@@ -1,4 +1,5 @@
 import { Dispatch, SetStateAction } from "react";
+import { Calc } from "src/types/stateType";
 import commaClickHandler from "./commaClickHandler";
 import equalsClickHandler from "./equalsClickHandler";
 import invertClickHandler from "./invertClickHandler";
@@ -7,9 +8,9 @@ import percentClickHandler from "./percentClickHandler";
 import resetClickHandler from "./resetClickHandler";
 import signClickHandler from "./signClickHandler";
 
-const useButtonsClickHandler = (
+const buttonsClickHandler = (
   calcValue: {
-    calc: object;
+    calc: Calc;
     setCalc: Dispatch<
       SetStateAction<{ sign: string; num: number; res: number }>
     >;
@@ -32,4 +33,4 @@ const useButtonsClickHandler = (
     : numClickHandler(btn, calc, setCalc);
 };
 
-export default useButtonsClickHandler;
+export default buttonsClickHandler;

@@ -1,15 +1,22 @@
+import { StateProp } from "@components/types/stateType";
 import "src/components/display/Display.scss";
 
-const Display = ({ value: { calc }, history }: any): JSX.Element => {
+interface ComponentsProps {
+  value: StateProp;
+  history: any;
+}
+
+const Display = ({
+  value: { calc },
+  history,
+}: ComponentsProps): JSX.Element => {
   const historyData = JSON.parse(history);
   return (
     <div className="calculator-display">
       <div className="calculator-results">
-        {calc.num ? calc.num : calc.res + ` ${calc.sign}`}
+        {calc.num ? calc?.num : calc?.res + ` ${calc.sign}`}
       </div>
-      {historyData == null ? (
-        ""
-      ) : (
+      {historyData && (
         <div className="calculator-history">
           {`${historyData?.firstNum} ${historyData?.sign} ${historyData?.secondNum} = ${historyData?.result}`}
         </div>
