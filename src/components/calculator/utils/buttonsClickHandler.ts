@@ -1,12 +1,12 @@
 import { Dispatch, SetStateAction } from "react";
 import { Calc } from "src/types/stateType";
-import commaClickHandler from "./commaClickHandler";
-import equalsClickHandler from "./equalsClickHandler";
-import invertClickHandler from "./invertClickHandler";
-import numClickHandler from "./numClickHandler";
-import percentClickHandler from "./percentClickHandler";
-import resetClickHandler from "./resetClickHandler";
-import signClickHandler from "./signClickHandler";
+import commaClickHandler from "src/components/calculator/utils/commaClickHandler";
+import equalsClickHandler from "src/components/calculator/utils/equalsClickHandler";
+import invertClickHandler from "src/components/calculator/utils/invertClickHandler";
+import numClickHandler from "src/components/calculator/utils/numClickHandler";
+import percentClickHandler from "src/components/calculator/utils/percentClickHandler";
+import resetClickHandler from "src/components/calculator/utils/resetClickHandler";
+import signClickHandler from "src/components/calculator/utils/signClickHandler";
 
 const buttonsClickHandler = (
   calcValue: {

@@ -1,4 +1,4 @@
-import { Calc } from "@components/types/stateType";
+import { Calc } from "src/types/stateType";
 import { Dispatch, SetStateAction } from "react";
 
 const invertClickHandler = (

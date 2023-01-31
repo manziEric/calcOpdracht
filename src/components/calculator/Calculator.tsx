@@ -9,7 +9,7 @@ const Calculator = (): JSX.Element => {
   const data = sessionStorage.getItem("calcHistory");
 
   return (
-    <div className="calculator">
+    <div className="calculator" data-testid="calculator">
       <Display value={calc} history={data} />
       <ButtonContainer>
         {btnValues.map((btn, i) => (

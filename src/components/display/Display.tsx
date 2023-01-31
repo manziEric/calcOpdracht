@@ -1,4 +1,4 @@
-import { StateProp } from "@components/types/stateType";
+import { StateProp } from "src/types/stateType";
 import "src/components/display/Display.scss";
 
 interface ComponentsProps {
@@ -12,7 +12,7 @@ const Display = ({
 }: ComponentsProps): JSX.Element => {
   const historyData = JSON.parse(history);
   return (
-    <div className="calculator-display">
+    <div className="calculator-display" data-testid="calculator-display">
       <div className="calculator-results">
         {calc.num ? calc?.num : calc?.res + ` ${calc.sign}`}
       </div>
