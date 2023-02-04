@@ -1,13 +1,15 @@
 import { Dispatch, SetStateAction } from "react";
+import { Calc } from "src/types/stateType";
 
 const commaClickHandler = (
   btn: number | string,
-  calc: object | any,
-  setCalc: Dispatch<SetStateAction<{ sign: string; num: number; res: number }>>
+  calc: Calc,
+  setCalc: Dispatch<SetStateAction<{ sign: string; num: string; res: number }>>
 ) => {
+  const { num } = calc;
   setCalc({
     ...calc,
-    num: !calc.num.toString().includes(".") ? calc.num + btn : calc.num,
+    num: !num.includes(".") ? num + btn : num,
   });
 };
 

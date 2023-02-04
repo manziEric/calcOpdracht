@@ -1,21 +1,20 @@
 import { Dispatch, SetStateAction } from "react";
+import { Calc } from "src/types/stateType";
 
 const numClickHandler = (
   btn: number | string,
-  calc: any,
-  setCalc: Dispatch<SetStateAction<{ sign: string; num: number; res: number }>>
+  calc: Calc,
+  setCalc: Dispatch<SetStateAction<{ sign: string; num: string; res: number }>>
 ) => {
+  const { num, sign, res } = calc;
   setCalc({
     ...calc,
-    num:
-      calc.num === 0 && btn === 0
-        ? 0
-        : calc.num.toString().includes(".")
-        ? Number(calc.num.toString() + btn.toString())
-        : calc.num % 1 === 0
-        ? Number(calc.num.toString() + btn.toString())
-        : calc.num + btn,
-    res: !calc.sign ? 0 : calc.res,
+    num: num.includes(".")
+      ? num + btn.toString()
+      : +num % 1 === 0
+      ? num + btn.toString()
+      : num,
+    res: !sign ? 0 : res,
   });
 };
 

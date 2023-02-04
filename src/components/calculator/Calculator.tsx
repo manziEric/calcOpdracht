@@ -7,7 +7,6 @@ import "src/components/calculator/Calculator.scss";
 const Calculator = (): JSX.Element => {
   const calc = useCalcValue();
   const data = sessionStorage.getItem("calcHistory");
-
   return (
     <div className="calculator" data-testid="calculator">
       <Display value={calc} history={data} />

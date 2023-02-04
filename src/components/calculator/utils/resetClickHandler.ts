@@ -3,12 +3,12 @@ import { Dispatch, SetStateAction } from "react";
 
 const resetClickHandler = (
   calc: Calc,
-  setCalc: Dispatch<SetStateAction<{ sign: string; num: number; res: number }>>
+  setCalc: Dispatch<SetStateAction<{ sign: string; num: string; res: number }>>
 ) => {
   setCalc({
     ...calc,
     sign: "",
-    num: 0,
+    num: "",
     res: 0,
   });
 };

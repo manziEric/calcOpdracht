@@ -3,22 +3,30 @@ import "src/components/display/Display.scss";
 
 interface ComponentsProps {
   value: StateProp;
-  history: string | null | any;
+  history: string | null;
 }
 
 const Display = ({
   value: { calc },
   history,
 }: ComponentsProps): JSX.Element => {
-  const historyData = JSON.parse(history);
+  let historyData;
+  if (history !== null) {
+    historyData = JSON.parse(history);
+  }
+  const {
+    firstNum,
+    sign: calcSign,
+    secondNum,
+    result,
+  } = historyData ?? { firstNum: "", sign: "", secondNum: "", result: "" };
+  const { num, sign, res } = calc;
   return (
     <div className="calculator-display" data-testid="calculator-display">
-      <div className="calculator-results">
-        {calc.num ? calc?.num : calc?.res + ` ${calc.sign}`}
-      </div>
+      <div className="calculator-results">{num ? num : res + ` ${sign}`}</div>
       {historyData && (
         <div className="calculator-history">
-          {`${historyData?.firstNum} ${historyData?.sign} ${historyData?.secondNum} = ${historyData?.result}`}
+          {`${firstNum} ${calcSign} ${secondNum} = ${result}`}
         </div>
       )}
     </div>

@@ -1,10 +1,12 @@
 import { Dispatch, SetStateAction } from "react";
+import { Calc } from "src/types/stateType";
 
 const equalsClickHandler = (
-  calc: any,
-  setCalc: Dispatch<SetStateAction<{ sign: string; num: number; res: number }>>
+  calc: Calc,
+  setCalc: Dispatch<SetStateAction<{ sign: string; num: string; res: number }>>
 ) => {
-  if (calc.sign && calc.num) {
+  const { num, sign, res } = calc;
+  if (sign && num) {
     const math = (a: number, b: number, sign: string) =>
       sign === "+"
         ? a + b
@@ -13,27 +15,21 @@ const equalsClickHandler = (
         : sign === "X"
         ? a * b
         : a / b;
-
-    const calcResult = math(Number(calc.res), Number(calc.num), calc.sign);
-
+    const calcResult = math(Number(res), Number(num), sign);
     sessionStorage.setItem(
       "calcHistory",
       JSON.stringify({
-        firstNum: calc.res,
-        sign: calc.sign,
-        secondNum: calc.num,
+        firstNum: res,
+        sign: sign,
+        secondNum: num,
         result: calcResult,
       })
     );
-
     setCalc({
       ...calc,
-      res:
-        calc.num === 0 && calc.sign === "/"
-          ? "Can't divide with 0"
-          : calcResult,
+      res: +num === 0 && sign === "/" ? 0 : calcResult,
       sign: "",
-      num: 0,
+      num: "",
     });
   }
 };

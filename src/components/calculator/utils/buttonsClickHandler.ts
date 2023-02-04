@@ -14,7 +14,7 @@ const buttonsClickHandler = (
   calcValue: {
     calc: Calc;
     setCalc: Dispatch<
-      SetStateAction<{ sign: string; num: number; res: number }>
+      SetStateAction<{ sign: string; num: string; res: number }>
     >;
   },
   btn: number | string

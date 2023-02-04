@@ -9,11 +9,11 @@ describe("Display", () => {
         value={{
           calc: {
             sign: "",
-            num: 0,
+            num: "",
             res: 0,
           },
           setCalc: function (
-            value: SetStateAction<{ sign: string; num: number; res: number }>
+            value: SetStateAction<{ sign: string; num: string; res: number }>
           ): void {
             throw new Error("Function not implemented.");
           },

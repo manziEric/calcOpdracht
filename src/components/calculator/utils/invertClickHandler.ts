@@ -3,13 +3,14 @@ import { Dispatch, SetStateAction } from "react";
 
 const invertClickHandler = (
   calc: Calc,
-  setCalc: Dispatch<SetStateAction<{ sign: string; num: number; res: number }>>
+  setCalc: Dispatch<SetStateAction<{ sign: string; num: string; res: number }>>
 ) => {
+  const { num, res } = calc;
   setCalc({
     ...calc,
-    num: calc.num ? calc.num * -1 : 0,
-    res: calc.res ? calc.res * -1 : 0,
-    sign: "",
+    num: num ? (+num * -1).toString() : "0",
+    res: res ? res * -1 : 0,
+    sign: "0",
   });
 };
 

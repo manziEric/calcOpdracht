@@ -4,13 +4,14 @@ import { Dispatch, SetStateAction } from "react";
 const signClickHandler = (
   btn: string,
   calc: Calc,
-  setCalc: Dispatch<SetStateAction<{ sign: string; num: number; res: number }>>
+  setCalc: Dispatch<SetStateAction<{ sign: string; num: string; res: number }>>
 ) => {
+  const { num, res } = calc;
   setCalc({
     ...calc,
     sign: btn,
-    res: !calc.res && calc.num ? calc.num : calc.res,
-    num: 0,
+    res: !res && +num ? +num : res,
+    num: "",
   });
 };
 
