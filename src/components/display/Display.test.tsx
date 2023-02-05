@@ -1,6 +1,5 @@
-import { SetStateAction } from "react";
 import { render, screen } from "@testing-library/react";
-import Display from "src/components/display/Display";
+import { Display } from "src/components";
 
 describe("Display", () => {
   it("should render the component", () => {
@@ -12,15 +11,11 @@ describe("Display", () => {
             num: "",
             res: 0,
           },
-          setCalc: function (
-            value: SetStateAction<{ sign: string; num: string; res: number }>
-          ): void {
-            throw new Error("Function not implemented.");
-          },
+          setCalc: () => {},
         }}
         history={'{"firstNum":2, "secondNum":42, "sign":"+"}'}
       ></Display>
     );
-    expect(screen.getByTestId("calculator-display")).toBeInTheDocument();
+    expect(screen.getByTestId("display")).toBeInTheDocument();
   });
 });

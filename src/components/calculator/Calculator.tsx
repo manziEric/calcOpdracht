@@ -1,5 +1,5 @@
 import buttonsClickHandler from "src/components/calculator/utils/buttonsClickHandler";
-import useCalcValue from "src/components/calculator/utils/useCalcValue";
+import useCalcValue from "src/components/calculator/utils/hooks/useCalcValue";
 import { Display, ButtonContainer, Button } from "src/components";
 import { btnValues } from "src/constants/calculatorNumber";
 import "src/components/calculator/Calculator.scss";

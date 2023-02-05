@@ -1,5 +1,5 @@
-import { Calc } from "src/types/stateType";
 import { Dispatch, SetStateAction } from "react";
+import { Calc } from "src/types/stateTypes";
 
 const signClickHandler = (
   btn: string,

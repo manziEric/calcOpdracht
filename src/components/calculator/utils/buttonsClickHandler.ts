@@ -1,10 +1,10 @@
 import { Dispatch, SetStateAction } from "react";
-import { Calc } from "src/types/stateType";
+import { Calc } from "src/types/stateTypes";
 import {
   commaClickHandler,
   equalsClickHandler,
   invertClickHandler,
-  numClickHandler,
+  numberClickHandler,
   percentClickHandler,
   resetClickHandler,
   signClickHandler,
@@ -32,7 +32,7 @@ const buttonsClickHandler = (
     ? signClickHandler(btn, calc, setCalc)
     : btn === "."
     ? commaClickHandler(btn, calc, setCalc)
-    : numClickHandler(btn, calc, setCalc);
+    : numberClickHandler(btn, calc, setCalc);
 };
 
 export default buttonsClickHandler;

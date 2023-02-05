@@ -1,13 +1,13 @@
 import { Dispatch, SetStateAction } from "react";
-import { Calc } from "src/types/stateType";
+import { percentParseHandler } from "src/components/calculator/utils/percentParseHandler";
+import { Calc } from "src/types/stateTypes";
 
 const percentClickHandler = (
   calc: Calc,
   setCalc: Dispatch<SetStateAction<{ sign: string; num: string; res: number }>>
 ) => {
-  const { num, res } = calc;
-  let calcNum = num ? parseFloat(num) : 0;
-  let calcRes = res ? parseFloat(res.toString()) : 0;
+  let [calcNum, calcRes] = percentParseHandler({ calc });
+
   setCalc({
     ...calc,
     num: (calcNum /= Math.pow(100, 1)).toString(),
